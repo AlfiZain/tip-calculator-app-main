@@ -1,0 +1,164 @@
+@use "../utils/variables";
+
+.layout-container {
+  width: 100%;
+  max-width: 24rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-block-end: 3rem;
+  @media only screen and (min-width: 48rem) {
+    max-width: 44rem;
+  }
+  @media only screen and (min-width: 64rem) {
+    max-width: 60rem;
+  }
+  .layout-header {
+    padding-block: 2rem;
+    .brand-title {
+      line-height: 2.75rem;
+      letter-spacing: 1rem;
+    }
+  }
+  .layout-content {
+    width: 100%;
+    background-color: variables.$white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    @media only screen and (min-width: 48rem) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 3rem;
+    }
+    .layout-content-row {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      row-gap: 1.5rem;
+      margin-block-end: 1.5rem;
+      .module-tip {
+        .module-tip-option {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(1.5rem, 1fr));
+          gap: 1rem;
+          @media only screen and (min-width: 48rem) {
+            grid-template-columns: repeat(3, minmax(2rem, 1fr));
+          }
+          .button-tip {
+            height: 3rem;
+            background-color: variables.$very-dark-cyan;
+            border: none;
+            border-radius: 0.3rem;
+            color: variables.$white;
+            font-weight: 700;
+            transition: 0.35s;
+            font-size: 1.5rem;
+            &.active {
+              background-color: variables.$strong-cyan;
+              color: variables.$very-dark-cyan;
+              border: 1px solid variables.$grayish-cyan;
+            }
+            &:hover {
+              background-color: variables.$strong-cyan;
+              color: variables.$very-dark-cyan;
+              border: 1px solid variables.$grayish-cyan;
+              cursor: pointer;
+            }
+            &.button-tip--custom {
+              background-color: variables.$white;
+              color: variables.$very-dark-cyan;
+              border: none;
+              text-align: right;
+              padding: 0.5rem;
+              &:focus {
+                outline: variables.$grayish-cyan solid 2px;
+              }
+            }
+          }
+        }
+      }
+      .label-container {
+        display: flex;
+        justify-content: space-between;
+        .form-label {
+          margin-block-end: 0.5rem;
+        }
+        .error {
+          color: red;
+        }
+      }
+      .input-wrapper {
+        width: 100%;
+        position: relative;
+        .placeholder {
+          position: absolute;
+          left: 10px;
+          top: 50%;
+          transform: translateY(-50%);
+          color: gray;
+          pointer-events: none;
+        }
+        .form-input {
+          width: 100%;
+          font-size: 1.5rem;
+          padding-block: 0.5rem;
+          padding-inline: 2rem 0.5rem;
+          text-align: right;
+          background-color: variables.$very-light-grayish-cyan;
+          border: none;
+          border-radius: 0.25rem;
+          cursor: pointer;
+          &:focus {
+            outline: variables.$grayish-cyan solid 3px;
+          }
+        }
+      }
+    }
+    .module-summary {
+      background-color: variables.$very-dark-cyan;
+      color: variables.$strong-cyan;
+      padding-block: 2rem 1rem;
+      padding-inline: 1rem;
+      border-radius: 1rem;
+      @media only screen and (min-width: 48rem) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 2rem;
+      }
+      .module-summary-row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        margin-block-end: 2rem;
+        .summary-label {
+          span {
+            font-size: 1.15rem;
+            color: variables.$white;
+            display: block;
+          }
+        }
+        .summary-value {
+          font-size: 2rem;
+          text-align: right;
+        }
+      }
+      .button-reset {
+        width: 100%;
+        padding: 1rem;
+        background-color: variables.$strong-cyan;
+        color: variables.$very-dark-cyan;
+        font-weight: 700;
+        font-size: 1.5rem;
+        border: none;
+        border-radius: 0.6rem;
+        transition: 0.3s;
+        &:hover {
+          background-color: variables.$light-grayish-cyan;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

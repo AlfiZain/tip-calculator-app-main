@@ -1,0 +1,12 @@
+@use "../utils/variables";
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: variables.$light-grayish-cyan;
+  font-family: variables.$font;
+  color: variables.$dark-grayish-cyan;
+  font-weight: 700;
+  font-size: 0.9rem;
+}

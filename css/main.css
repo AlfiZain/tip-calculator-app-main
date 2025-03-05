@@ -1,0 +1,278 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+/* https://piccalil.li/blog/a-more-modern-css-reset/ */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* Primary */
+/* Neutral */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(185, 41%, 84%);
+  font-family: "Space Mono", monospace;
+  color: hsl(186, 14%, 43%);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.layout-container {
+  width: 100%;
+  max-width: 24rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-block-end: 3rem;
+}
+@media only screen and (min-width: 48rem) {
+  .layout-container {
+    max-width: 44rem;
+  }
+}
+@media only screen and (min-width: 64rem) {
+  .layout-container {
+    max-width: 60rem;
+  }
+}
+.layout-container .layout-header {
+  padding-block: 2rem;
+}
+.layout-container .layout-header .brand-title {
+  line-height: 2.75rem;
+  letter-spacing: 1rem;
+}
+.layout-container .layout-content {
+  width: 100%;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+@media only screen and (min-width: 48rem) {
+  .layout-container .layout-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 3rem;
+  }
+}
+.layout-container .layout-content .layout-content-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  row-gap: 1.5rem;
+  margin-block-end: 1.5rem;
+}
+.layout-container .layout-content .layout-content-row .module-tip .module-tip-option {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(1.5rem, 1fr));
+  gap: 1rem;
+}
+@media only screen and (min-width: 48rem) {
+  .layout-container .layout-content .layout-content-row .module-tip .module-tip-option {
+    grid-template-columns: repeat(3, minmax(2rem, 1fr));
+  }
+}
+.layout-container .layout-content .layout-content-row .module-tip .module-tip-option .button-tip {
+  height: 3rem;
+  background-color: hsl(183, 100%, 15%);
+  border: none;
+  border-radius: 0.3rem;
+  color: hsl(0, 0%, 100%);
+  font-weight: 700;
+  transition: 0.35s;
+  font-size: 1.5rem;
+}
+.layout-container .layout-content .layout-content-row .module-tip .module-tip-option .button-tip.active {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+  border: 1px solid hsl(184, 14%, 56%);
+}
+.layout-container .layout-content .layout-content-row .module-tip .module-tip-option .button-tip:hover {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+  border: 1px solid hsl(184, 14%, 56%);
+  cursor: pointer;
+}
+.layout-container .layout-content .layout-content-row .module-tip .module-tip-option .button-tip.button-tip--custom {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(183, 100%, 15%);
+  border: none;
+  text-align: right;
+  padding: 0.5rem;
+}
+.layout-container .layout-content .layout-content-row .module-tip .module-tip-option .button-tip.button-tip--custom:focus {
+  outline: hsl(184, 14%, 56%) solid 2px;
+}
+.layout-container .layout-content .layout-content-row .label-container {
+  display: flex;
+  justify-content: space-between;
+}
+.layout-container .layout-content .layout-content-row .label-container .form-label {
+  margin-block-end: 0.5rem;
+}
+.layout-container .layout-content .layout-content-row .label-container .error {
+  color: red;
+}
+.layout-container .layout-content .layout-content-row .input-wrapper {
+  width: 100%;
+  position: relative;
+}
+.layout-container .layout-content .layout-content-row .input-wrapper .placeholder {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: gray;
+  pointer-events: none;
+}
+.layout-container .layout-content .layout-content-row .input-wrapper .form-input {
+  width: 100%;
+  font-size: 1.5rem;
+  padding-block: 0.5rem;
+  padding-inline: 2rem 0.5rem;
+  text-align: right;
+  background-color: hsl(189, 41%, 97%);
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+.layout-container .layout-content .layout-content-row .input-wrapper .form-input:focus {
+  outline: hsl(184, 14%, 56%) solid 3px;
+}
+.layout-container .layout-content .module-summary {
+  background-color: hsl(183, 100%, 15%);
+  color: hsl(172, 67%, 45%);
+  padding-block: 2rem 1rem;
+  padding-inline: 1rem;
+  border-radius: 1rem;
+}
+@media only screen and (min-width: 48rem) {
+  .layout-container .layout-content .module-summary {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+  }
+}
+.layout-container .layout-content .module-summary .module-summary-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  margin-block-end: 2rem;
+}
+.layout-container .layout-content .module-summary .module-summary-row .summary-label span {
+  font-size: 1.15rem;
+  color: hsl(0, 0%, 100%);
+  display: block;
+}
+.layout-container .layout-content .module-summary .module-summary-row .summary-value {
+  font-size: 2rem;
+  text-align: right;
+}
+.layout-container .layout-content .module-summary .button-reset {
+  width: 100%;
+  padding: 1rem;
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+  font-weight: 700;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 0.6rem;
+  transition: 0.3s;
+}
+.layout-container .layout-content .module-summary .button-reset:hover {
+  background-color: hsl(185, 41%, 84%);
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=main.css.map */

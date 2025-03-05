@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body>
+    <div class="layout-container">
+      <header class="layout-header">
+        <h1 class="brand-title">SPLI<br />TTER</h1>
+      </header>
+
+      <main class="layout-content">
+        <div class="layout-content-row">
+          <section class="module-bill">
+            <div class="label-container">
+              <label for="bill" class="form-label">Bill</label>
+              <span id="bill-error-text" class="error"></span>
+            </div>
+            <div class="input-wrapper">
+              <img class="placeholder" src="./images/icon-dollar.svg" alt="icon-dollar" />
+              <input type="number" name="bill" id="bill" class="form-input" min="0" placeholder="0" />
+            </div>
+          </section>
+
+          <section class="module-tip">
+            <div class="label-container">
+              <label for="custom-tip" class="form-label">Select Tip %</label>
+              <span id="tip-error-text" class="error"></span>
+            </div>
+            <div class="module-tip-option">
+              <button class="button-tip">5%</button>
+              <button class="button-tip">10%</button>
+              <button class="button-tip is-active">15%</button>
+              <button class="button-tip">25%</button>
+              <button class="button-tip">50%</button>
+              <input class="button-tip button-tip--custom" type="number" id="custom-tip" name="custom-tip" min="0" max="100" placeholder="Custom" />
+            </div>
+          </section>
+
+          <section class="module-people">
+            <div class="label-container">
+              <label for="people" class="form-label">Number of People</label>
+              <span id="people-error-text" class="error"></span>
+            </div>
+            <div class="input-wrapper">
+              <img class="placeholder" src="./images/icon-person.svg" alt="icon-person" />
+              <input type="number" name="people" id="people" class="form-input" min="0" placeholder="0" />
+            </div>
+          </section>
+        </div>
+
+        <section class="module-summary">
+          <div class="module-summary-layout">
+            <div class="module-summary-row">
+              <p class="summary-label"><span>Tip Amount</span>/ person</p>
+              <p id="tip-amount-display" class="summary-value">$0.00</p>
+            </div>
+            <div class="module-summary-row">
+              <p class="summary-label"><span>Total</span>/ person</p>
+              <p id="total-display" class="summary-value">$0.00</p>
+            </div>
+          </div>
+          <button id="button-reset" class="button-reset">RESET</button>
+        </section>
+      </main>
+    </div>
+    <script defer src="./scripts/main.js"></script>
+  </body>
+</html>
