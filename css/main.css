@@ -131,6 +131,7 @@ body {
 .layout-container .layout-header .brand-title {
   line-height: 2.75rem;
   letter-spacing: 1rem;
+  font-size: 2rem;
 }
 .layout-container .layout-content {
   width: 100%;
